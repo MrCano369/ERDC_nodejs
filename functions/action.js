@@ -1,6 +1,7 @@
 btnNavi.addEventListener('click', () => {
     navi.style.left = '0px';
     nada.style.display = 'block';
+    navi.scrollTop = 0;
 });
 nada.addEventListener('click', () => {
     navi.style.left = '-200px';

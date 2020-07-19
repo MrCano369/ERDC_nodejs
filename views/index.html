@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <title>Inicio</title>
+</head>
+<body>
+    <div id="navi">
+        <div>
+            <a href="/login"><button><img src="../public/img/login.svg" width="20px">Iniciar sesión</button></a>
+            <a href="/registro"><button><img src="../public/img/registro.svg" width="20px">Registro</button></a>
+            <hr>
+            <a href="/"><button><img src="../public/img/inicio.svg" width="20px">Inicio</button></a>
+            <a href="/foro"><button><img src="../public/img/foro.svg" width="20px">Foro</button></a>
+            <a href="/juegos"><button><img src="../public/img/juegos.svg" width="20px">Juegos</button></a>
+            <a href="/aprender"><button><img src="../public/img/aprender.svg" width="20px">Aprender</button></a>
+            <a href="/otras"><button>Otras apps</button></a>
+            <p>Ultima modificación 18/Jul/2020</p>
+        </div>
+    </div>
+    <div class="page">
+        <div class="header">
+            <img src="../public/img/menu.svg" height="30" id="btnNavi">
+            <h1>Titulo</h1>
+        </div>
+        <div id="nada"></div>
+        
+        <h2>Inicio</h2>
+
+        <div class="content">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores non qui corporis dolore in assumenda atque amet ab aliquid tempore? Ullam non facere vero repudiandae eos! Assumenda quibusdam fuga animi inventore hic laborum impedit, at et unde voluptatibus explicabo repellendus atque adipisci sapiente eligendi tempore asperiores neque ipsum totam debitis sequi. Obcaecati expedita adipisci ducimus quibusdam ea harum quae iure quo assumenda! Quas ab veritatis, culpa corporis eius cupiditate. Quidem non similique facere ab veniam praesentium in? Nisi, debitis ad veniam vel natus culpa iusto corporis, rem distinctio soluta magnam, et nihil? Nihil recusandae at facilis cum ea nemo aliquam.    
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores non qui corporis dolore in assumenda atque amet ab aliquid tempore? Ullam non facere vero repudiandae eos! Assumenda quibusdam fuga animi inventore hic laborum impedit, at et unde voluptatibus explicabo repellendus atque adipisci sapiente eligendi tempore asperiores neque ipsum totam debitis sequi. Obcaecati expedita adipisci ducimus quibusdam ea harum quae iure quo assumenda! Quas ab veritatis, culpa corporis eius cupiditate. Quidem non similique facere ab veniam praesentium in? Nisi, debitis ad veniam vel natus culpa iusto corporis, rem distinctio soluta magnam, et nihil? Nihil recusandae at facilis cum ea nemo aliquam.    
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores non qui corporis dolore in assumenda atque amet ab aliquid tempore? Ullam non facere vero repudiandae eos! Assumenda quibusdam fuga animi inventore hic laborum impedit, at et unde voluptatibus explicabo repellendus atque adipisci sapiente eligendi tempore asperiores neque ipsum totam debitis sequi. Obcaecati expedita adipisci ducimus quibusdam ea harum quae iure quo assumenda! Quas ab veritatis, culpa corporis eius cupiditate. Quidem non similique facere ab veniam praesentium in? Nisi, debitis ad veniam vel natus culpa iusto corporis, rem distinctio soluta magnam, et nihil? Nihil recusandae at facilis cum ea nemo aliquam.    
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores non qui corporis dolore in assumenda atque amet ab aliquid tempore? Ullam non facere vero repudiandae eos! Assumenda quibusdam fuga animi inventore hic laborum impedit, at et unde voluptatibus explicabo repellendus atque adipisci sapiente eligendi tempore asperiores neque ipsum totam debitis sequi. Obcaecati expedita adipisci ducimus quibusdam ea harum quae iure quo assumenda! Quas ab veritatis, culpa corporis eius cupiditate. Quidem non similique facere ab veniam praesentium in? Nisi, debitis ad veniam vel natus culpa iusto corporis, rem distinctio soluta magnam, et nihil? Nihil recusandae at facilis cum ea nemo aliquam.    
+            
+            <!-- <br><img src="https://picsum.photos/800/600" width="100%"> -->
+        </div>
+        
+        <div class="footer">
+            <img src="../public/img/fondo.jpg" height="100%" id="asis">
+            <p id="msgBox"></p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+btnNavi.addEventListener('click', () => {
+    navi.style.left = '0px';
+    nada.style.display = 'block';
+    navi.scrollTop = 0;
+});
+nada.addEventListener('click', () => {
+    navi.style.left = '-200px';
+    nada.style.display = 'none';
+});
+</script>
