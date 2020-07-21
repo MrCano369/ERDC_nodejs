@@ -33,10 +33,10 @@ var colaMsg = {
         let writeL = (n = 0) => {
             if (n < msg2.length){
                 msgBox.innerHTML += msg2.charAt(n);
-                //asis.src = `public/img/ikaros${ n % 3 % 2 }.png`;
+                asis.src = `public/img/ikaros${ n % 3 % 2 }.png`;
                 setTimeout( () => writeL(n+1), 50);
             }else{
-                //asis.src = 'public/img/ikaros0.png';
+                asis.src = 'public/img/ikaros0.png';
                 msgBox.innerHTML = this.actual.msg;
                 this.actual = this.actual.next;
                 if( this.actual ) setTimeout(() => this.show(), 2000);
