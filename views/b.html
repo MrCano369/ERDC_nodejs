@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <title>Registro</title>
+</head>
+<body>
+   
+    <div id="menu">
+        <a href="/login"><button><img src="../public/img/login.svg" width="20px">Iniciar sesión</button></a>
+        <a href="/registro"><button><img src="../public/img/registro.svg" width="20px">Registro</button></a>
+        <hr>
+        <a href="/"><button><img src="../public/img/inicio.svg" width="20px">Inicio</button></a>
+        <a href="/foro"><button><img src="../public/img/foro.svg" width="20px">Foro</button></a>
+        <a href="/juegos"><button><img src="../public/img/juegos.svg" width="20px">Juegos</button></a>
+        <a href="/aprender"><button><img src="../public/img/aprender.svg" width="20px">Aprender</button></a>
+        <a href="/otras"><button>Otras apps</button></a>
+        <p>Ultima modificación 21/Jul/2020</p>
+    </div>
+    <div class="header">
+        <img src="../public/img/menu.svg" height="30px" id="btnMenu">
+        <h1>El rincón del Gua</h1>
+    </div>
+    <div class="footer">
+        <img src="../public/img/fondo.jpg" height="100%" id="asis">
+        <p id="msgBox">Hola.</p>
+    </div>
+    <div id="nada"></div>
+
+    <div class="page">
+        <h2>Registro</h2>
+        <form action="registroA">
+            <p>Nombre de usuario</p>
+            <input type="text" name="nombre" required>
+            <p>Contraseña</p>
+            <input type="password" name="clave" required>
+            <p>Repita su contraseña</p>
+            <input type="password" id="clave2" required>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+    
+</body>
+</html>
+<script src="../functions/action.js"></script>
