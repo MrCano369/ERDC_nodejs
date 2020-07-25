@@ -63,9 +63,11 @@ form {
   transform: translateX(-200px);
   transition: 0.5s;
   text-align: center; }
-  #menu p {
+  #menu label {
+    width: 100%;
     position: absolute;
-    bottom: 0px; }
+    bottom: 0px;
+    left: 0px; }
   #menu button {
     width: 100%;
     font-size: 15px;

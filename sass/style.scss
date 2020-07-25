@@ -62,9 +62,11 @@ form{
     transition: 0.5s;
     text-align: center;
 
-    p{
+    label{
+        width: 100%;
         position: absolute;
         bottom: 0px;
+        left: 0px;
     }
     button{
         width: 100%;

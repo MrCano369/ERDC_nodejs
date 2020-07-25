@@ -1,20 +1,31 @@
 <div id="menu">
-    <a href="/login"><button><img src="public/img/login.svg" width="20px">Iniciar sesión</button></a>
-    <a href="/registro"><button><img src="public/img/registro.svg" width="20px">Registro</button></a>
+
+    <% if(user){ %>
+        <img src="<%= user.img %>" width="100">
+        <h3><%= user.nombre %></h3>
+        <p>Coins: $<%= user.coins %></p>
+        <p>Exp: <%= user.exp %></p>
+        <button>Ver perfil</button>
+        <button>Cerrar sesión</button>
+    <% }else{ %>
+        <a href="/login"><button><img src="public/img/login.svg" width="20px">Iniciar sesión</button></a>
+        <a href="/registro"><button><img src="public/img/registro.svg" width="20px">Registro</button></a>
+    <% } %>
+    
     <hr>
     <a href="/"><button><img src="public/img/inicio.svg" width="20px">Inicio</button></a>
     <a href="/foro"><button><img src="public/img/foro.svg" width="20px">Foro</button></a>
     <a href="/juegos"><button><img src="public/img/juegos.svg" width="20px">Juegos</button></a>
     <a href="/aprender"><button><img src="public/img/aprender.svg" width="20px">Aprender</button></a>
     <a href="/otras"><button>Otras apps</button></a>
-    <p>Ultima modificación 21/Jul/2020</p>
+    <label>Ultima modificación 25/Jul/2020</label>
 </div>
 <div class="header">
     <img src="public/img/menu.svg" height="30px" id="btnMenu">
-    <h1>El rincón del Gua</h1>
+    <h1>El rincón de Cano</h1>
 </div>
 <div class="footer">
-    <img src="public/img/perro.png" height="100%" id="asis">
+    <img src="public/img/persona.png" height="100%" id="asis">
     <p id="msgBox">Hola.</p>
 </div>
 <div id="nada"></div>

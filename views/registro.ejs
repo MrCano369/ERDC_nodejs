@@ -8,11 +8,11 @@
 </head>
 <body>
    
-    <%- include('partials/elements.ejs') %>
+    <%- include('partials/elements.ejs', { user }) %>
 
     <div class="page">
         <h2>Registro</h2>
-        <form action="registroA" id="frm">
+        <form id="frm">
             <p>Nombre de usuario</p>
             <input type="text" name="nombre" required>
             <p>Correo electrónico</p>
@@ -30,25 +30,36 @@
 <script src="functions/action.js"></script>
 <script>
     colaMsg.add('Introduzca sus datos por favor.');
-    clave2.addEventListener('input', () => {
+
+    clave2.addEventListener('input', () => { // arreglar
         if (frm.clave.value != clave2.value) clave2.setCustomValidity("Las contraseñas no coinciden");
         else frm.clave2.setCustomValidity("");
     });
+
     frm.addEventListener('submit', e => {
-        colaMsg.add('Cargando...');
         e.preventDefault();
-        fetch('/registrar', {
-            method: 'POST', 
+        msgBox.innerHTML = 'Cargando...';
+
+        fetch('/registro', {
+            method: 'POST',
             body: JSON.stringify(Object.fromEntries(new FormData(frm))),
             headers: { 'content-type': "application/json" }
         })
-        .then(e => e.json()).then(data => {
-            //console.log(data);
-            colaMsg.add(data.msg);
-            if(data.r) location.href = '/';
-            else{
-                frm.nombre.value = '';
-                frm.nombre.focus();
+        .then(e => e.text()).then(data => {
+            switch(data){
+                case '1':
+                    colaMsg.add('El nombre de usuario ya está en uso.');
+                    frm.nombre.value = '';
+                    frm.nombre.focus();
+                break;
+                case '2':
+                    colaMsg.add('El correo electrónico ya está en uso.');
+                    frm.correo.value = '';
+                    frm.correo.focus();
+                break;
+                case '3':
+                    location.href = '/';
+                break;
             }
         });
     });

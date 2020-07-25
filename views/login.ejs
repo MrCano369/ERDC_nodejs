@@ -8,17 +8,49 @@
 </head>
 <body>
    
-    <%- include('partials/elements.ejs') %>
+    <%- include('partials/elements.ejs', { user }) %>
 
     <div class="page">
         <h2>Inicio de sesión</h2>
-
+        <form id="frm">
+            <p>Nombre de usuario</p>
+            <input type="text" name="nombre" required>
+            <p>Contraseña</p>
+            <input type="password" name="clave" required>
+            <input type="submit" value="Enviar">
+        </form>
     </div>
 </body>
 </html>
 <script src="functions/action.js"></script>
 <script>
-    colaMsg.add('a');
-    colaMsg.add('Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, odit dolores! Nemo, earum unde libero atque qui soluta! Cumque eius quidem laboriosam perferendis recusandae veniam nulla quis iste blanditiis expedita.');
-    colaMsg.add('a');
+    colaMsg.add('Introduzca sus datos por favor.');
+
+    frm.addEventListener('submit', e => {
+        e.preventDefault();
+        msgBox.innerHTML = 'Cargando...';
+
+        fetch('/login', {
+            method: 'POST',
+            body: JSON.stringify(Object.fromEntries(new FormData(frm))),
+            headers: { 'content-type': "application/json" }
+        })
+        .then(e => e.text()).then(data => {
+            switch(data){
+                case '1':
+                    colaMsg.add('El usuario no existe, intente <a href="/registro">Registrarse</a>.');
+                    frm.nombre.value = '';
+                    frm.nombre.focus();
+                break;
+                case '2':
+                    colaMsg.add('Contraseña incorrecta.');
+                    frm.clave.value = '';
+                    frm.clave.focus();
+                break;
+                case '3':
+                    location.href = '/';
+                break;
+            }
+        });
+    });
 </script>
